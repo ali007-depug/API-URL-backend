@@ -9,7 +9,8 @@ import dotenv from 'dotenv';
 dotenv.config({ path: `.env.${process.env.NODE_ENV || 'development'}` });
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(new URL(import.meta.url).pathname);
+const __dirname = path.dirname(__filename);
+
 const app = express();
 
 // Config
