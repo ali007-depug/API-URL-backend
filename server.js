@@ -21,8 +21,11 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 // Middleware
 app.use(cors({
   origin: FRONTEND_URL,
-  methods: ['POST'],
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type'],
 }));
+// app.options('*', cors()); // Handle preflight requests
+
 app.use(express.json());
 
 // ========== POST /shorten ========== //
